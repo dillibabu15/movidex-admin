@@ -1,5 +1,9 @@
 /* Cleaned Login & Welcome Page CSS */
-
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .page-container {
     display: flex;
     justify-content: center;

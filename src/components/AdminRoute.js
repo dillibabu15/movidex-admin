@@ -13,6 +13,7 @@ export default function AdminRoute({ children }) {
   if (user && user.role === "admin") {
     return children;
   } else {
+    sessionStorage.clear();
     return <Navigate to="/" replace />;
   }
 }
