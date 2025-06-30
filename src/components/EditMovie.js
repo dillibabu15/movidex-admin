@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
+import "./styles.css"; // Import the CSS file
 
 export default function EditMovie() {
   const { id } = useParams();
@@ -82,25 +83,68 @@ export default function EditMovie() {
     setSaving(false);
   };
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div className="loading-container">Loading...</div>;
 
   return (
     <>
       <Navbar />
-      <div style={{ maxWidth: 480, margin: "40px auto", background: "#fff", borderRadius: 12, boxShadow: "0 2px 12px rgba(0,0,0,0.08)", padding: 32 }}>
+      <div className="form-container">
         <h2>Edit Movie</h2>
-        <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-          <input name="title" placeholder="Title" value={form.title} onChange={handleChange} required style={{ padding: 8, borderRadius: 6, border: "1px solid #ccc" }} />
-          <input name="genre" placeholder="Genre" value={form.genre} onChange={handleChange} required style={{ padding: 8, borderRadius: 6, border: "1px solid #ccc" }} />
-          <input name="rating" type="number" min="1" max="10" step="0.1" placeholder="Rating" value={form.rating} onChange={handleChange} required style={{ padding: 8, borderRadius: 6, border: "1px solid #ccc" }} />
-          <input name="image" placeholder="Image filename or URL" value={form.image} onChange={handleChange} required style={{ padding: 8, borderRadius: 6, border: "1px solid #ccc" }} />
-          <textarea name="description" placeholder="Description" value={form.description} onChange={handleChange} required style={{ padding: 8, borderRadius: 6, border: "1px solid #ccc", minHeight: 80 }} />
-          <button type="submit" style={{ background: "#007bff", color: "#fff", border: "none", borderRadius: 6, padding: "10px 0", fontWeight: 600, fontSize: 16, cursor: "pointer" }} disabled={saving}>
+        <form onSubmit={handleSubmit} className="form-vertical">
+          <input 
+            name="title" 
+            placeholder="Title" 
+            value={form.title} 
+            onChange={handleChange} 
+            required 
+            className="form-input" 
+          />
+          <input 
+            name="genre" 
+            placeholder="Genre" 
+            value={form.genre} 
+            onChange={handleChange} 
+            required 
+            className="form-input" 
+          />
+          <input 
+            name="rating" 
+            type="number" 
+            min="1" 
+            max="10" 
+            step="0.1" 
+            placeholder="Rating" 
+            value={form.rating} 
+            onChange={handleChange} 
+            required 
+            className="form-input" 
+          />
+          <input 
+            name="image" 
+            placeholder="Image filename or URL" 
+            value={form.image} 
+            onChange={handleChange} 
+            required 
+            className="form-input" 
+          />
+          <textarea 
+            name="description" 
+            placeholder="Description" 
+            value={form.description} 
+            onChange={handleChange} 
+            required 
+            className="form-textarea" 
+          />
+          <button 
+            type="submit" 
+            className="form-button" 
+            disabled={saving}
+          >
             {saving ? 'Saving...' : 'Update Movie'}
           </button>
         </form>
-        {error && <p style={{ marginTop: 16, color: "#e74c3c", textAlign: "center" }}>{error}</p>}
-        {message && <p style={{ marginTop: 16, color: "#27ae60", textAlign: "center" }}>{message}</p>}
+        {error && <p className="error-message">{error}</p>}
+        {message && <p className="success-message">{message}</p>}
       </div>
     </>
   );

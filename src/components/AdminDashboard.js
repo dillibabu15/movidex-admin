@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
+import "./styles.css";
 
 export default function AdminDashboard() {
   const [movies, setMovies] = useState([]);
@@ -41,63 +42,50 @@ export default function AdminDashboard() {
   return (
     <>
       <Navbar />
-      <div style={{ padding: 32 }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24 }}>
-          <h2>Admin Dashboard</h2>
+      <div className="admin-dashboard">
+        <div className="dashboard-header">
+          <h2 className="dashboard-title">Admin Dashboard</h2>
           <button
             onClick={() => navigate("/admin/add")}
-            style={{
-              background: "#007bff",
-              color: "#fff",
-              border: "none",
-              borderRadius: 6,
-              padding: "8px 18px",
-              fontWeight: 600,
-              fontSize: 16,
-              cursor: "pointer"
-            }}
+            className="add-movie-btn"
           >
             + Add Movie
           </button>
         </div>
+        
         {loading ? (
-          <p>Loading movies...</p>
+          <p className="loading-text">Loading movies...</p>
         ) : (
-          <table style={{ width: "100%", borderCollapse: "collapse" }}>
-            <thead>
-              <tr style={{ background: "#222", color: "#fff" }}>
-                <th style={{ padding: 8 }}>Title</th>
-                <th style={{ padding: 8 }}>Genre</th>
-                <th style={{ padding: 8 }}>Rating</th>
-                <th style={{ padding: 8 }}>Action</th>
+          <table className="movies-table">
+            <thead className="table-header">
+              <tr>
+                <th>Title</th>
+                <th>Genre</th>
+                <th>Rating</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
               {movies.map((movie) => (
-                <tr key={movie._id} style={{ borderBottom: "1px solid #ccc" }}>
-                  <td style={{ padding: 8 }}>{movie.title}</td>
-                  <td style={{ padding: 8 }}>{movie.genre}</td>
-                  <td style={{ padding: 8 }}>{movie.rating}</td>
-                  <td style={{ padding: 8 }}>
-                    <button
-                      style={{ marginRight: 8 }}
-                      onClick={() => navigate(`/admin/edit/${movie._id}`)}
-                    >
-                      Edit
-                    </button>
-                    <button
-                      style={{
-                        color: "white",
-                        background: "#e74c3c",
-                        border: "none",
-                        borderRadius: 4,
-                        padding: "4px 12px",
-                        cursor: "pointer"
-                      }}
-                      onClick={() => handleDelete(movie._id)}
-                    >
-                      Delete
-                    </button>
+                <tr key={movie._id} className="table-row">
+                  <td className="table-cell">{movie.title}</td>
+                  <td className="table-cell">{movie.genre}</td>
+                  <td className="table-cell">{movie.rating}</td>
+                  <td className="table-cell">
+                    <div className="action-buttons">
+                      <button
+                        className="edit-btn"
+                        onClick={() => navigate(`/admin/edit/${movie._id}`)}
+                      >
+                        Edit
+                      </button>
+                      <button
+                        className="delete-btn"
+                        onClick={() => handleDelete(movie._id)}
+                      >
+                        Delete
+                      </button>
+                    </div>
                   </td>
                 </tr>
               ))}

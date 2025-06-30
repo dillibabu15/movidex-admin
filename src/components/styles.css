@@ -1,0 +1,746 @@
+/* Complete Styles CSS - All component styles consolidated */
+
+/* ===== GLOBAL STYLES ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* ===== NAVBAR STYLES ===== */
+.navbar {
+  background: #222;
+  color: #fff;
+  padding: 12px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger-line {
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.mobile-nav {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: #333;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  z-index: 100;
+  border: 1px solid #444;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 12px 24px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.nav-divider {
+  border-top: 1px solid #444;
+  margin: 8px 0;
+}
+
+.nav-logout {
+  color: #e74c3c;
+  font-weight: 700;
+  background: transparent;
+  border: none;
+  padding: 12px 24px;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* ===== ADMIN DASHBOARD STYLES ===== */
+.admin-dashboard {
+  padding: 32px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.dashboard-title {
+  margin: 0;
+  color: #1c1c1c;
+}
+
+.add-movie-btn {
+  background: #001aff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 18px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.back-button{
+  background:  #001aff;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 20px;
+  padding: 10px;
+  background-color: #000000;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  &:hover {
+    background-color: #343434;
+  }
+}
+
+.add-movie-btn:hover {
+  background: #0056b3;
+}
+
+.loading-text {
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.movies-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table-header {
+  background: #222;
+  color: #fff;
+}
+
+.table-header th {
+  padding: 12px 8px;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.table-row {
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease;
+}
+
+.table-row:hover {
+  background-color: #f8f9fa;
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.table-cell {
+  padding: 12px 8px;
+  vertical-align: middle;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn {
+  color: white;
+  background: #17a2b8;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.edit-btn:hover {
+  background: #138496;
+}
+
+.delete-btn {
+  color: white;
+  background: #e74c3c;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+}
+
+/* ===== FORM CONTAINER STYLES ===== */
+.form-container {
+  max-width: 480px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 32px;
+}
+
+.form-container h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  color: #333;
+}
+
+.form-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.form-textarea {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  min-height: 80px;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.form-button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 0;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.form-button:hover {
+  background: #0056b3;
+}
+
+.form-button:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.error-message {
+  margin-top: 16px;
+  color: #e74c3c;
+  text-align: center;
+  font-weight: 500;
+}
+
+.success-message {
+  margin-top: 16px;
+  color: #27ae60;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* ===== MODAL STYLES ===== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 10px;
+  padding: 32px;
+  min-width: 320px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-content h3 {
+  margin: 0 0 16px 0;
+  color: #333;
+}
+
+.modal-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 600;
+  color: #333;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.modal-select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.modal-save-btn {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modal-save-btn:hover {
+  background: #218838;
+}
+
+.modal-save-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.modal-cancel-btn {
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.modal-cancel-btn:hover {
+  background: #c82333;
+}
+
+.modal-cancel-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+/* ===== USER MANAGEMENT STYLES ===== */
+.user-management-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 32px;
+}
+
+.user-management-container h2 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  color: #333;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.users-table-header {
+  background: #222;
+  color: #fff;
+}
+
+.users-table-header th {
+  padding: 8px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.users-table-row {
+  border-bottom: 1px solid #ccc;
+}
+
+.users-table-cell {
+  padding: 8px;
+  vertical-align: middle;
+}
+
+.expand-btn {
+  margin-left: 8px;
+  background: #eee;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 8px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.2s ease;
+}
+
+.expand-btn:hover {
+  background: #ddd;
+}
+
+.user-edit-btn {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 12px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-right: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.user-edit-btn:hover {
+  background: #0056b3;
+}
+
+.expanded-row {
+  background: #f8f9fa;
+  padding: 12px;
+}
+
+.expanded-row b {
+  color: #333;
+}
+
+.expanded-row ul {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.expanded-row li {
+  margin-bottom: 4px;
+}
+
+.review-date {
+  color: #888;
+  font-size: 14px;
+}
+
+/* ===== WELCOME PAGE STYLES ===== */
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.welcome-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 320px;
+}
+
+.welcome-title {
+  margin: 0 0 16px 0;
+  color: #333;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.welcome-text {
+  margin: 0 0 24px 0;
+  color: #666;
+  font-size: 16px;
+}
+
+.btn-logout {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-logout:hover {
+  background: #c0392b;
+}
+
+/* ===== LOADING STATES ===== */
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #666;
+  font-size: 18px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .admin-dashboard {
+    padding: 16px;
+  }
+  
+  .dashboard-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+  
+  .movies-table {
+    font-size: 14px;
+  }
+  
+  .table-header th,
+  .table-cell {
+    padding: 8px 4px;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .edit-btn,
+  .delete-btn {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+  
+  .form-container {
+    margin: 20px;
+    padding: 24px;
+  }
+  
+  .user-management-container {
+    margin: 20px;
+    padding: 24px;
+  }
+  
+  .users-table {
+    font-size: 14px;
+  }
+  
+  .users-table-header th,
+  .users-table-cell {
+    padding: 6px 4px;
+  }
+  
+  .modal-content {
+    margin: 20px;
+    min-width: auto;
+    max-width: 90vw;
+  }
+  
+  .navbar {
+    padding: 12px 16px;
+  }
+  
+  .welcome-box {
+    margin: 20px;
+    padding: 32px 24px;
+  }
+  
+  .welcome-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+    margin: 10px;
+    padding: 20px;
+  }
+  
+  .user-management-container {
+    margin: 10px;
+    padding: 20px;
+  }
+  
+  .modal-content {
+    margin: 10px;
+    padding: 24px;
+  }
+  
+  .modal-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .modal-save-btn,
+  .modal-cancel-btn {
+    width: 100%;
+  }
+  
+  .welcome-box {
+    margin: 10px;
+    padding: 24px;
+  }
+  
+  .welcome-title {
+    font-size: 20px;
+  }
+}
+
+/* ===== UTILITY CLASSES ===== */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.p-8 {
+  padding: 8px;
+}
+
+.p-16 {
+  padding: 16px;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.gap-8 {
+  gap: 8px;
+}
+
+.gap-16 {
+  gap: 16px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+/* ===== FOCUS STATES ===== */
+.form-input:focus,
+.form-textarea:focus,
+.modal-input:focus,
+.modal-select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.form-button:focus,
+.add-movie-btn:focus,
+.edit-btn:focus,
+.delete-btn:focus,
+.user-edit-btn:focus,
+.expand-btn:focus,
+.modal-save-btn:focus,
+.modal-cancel-btn:focus,
+.btn-logout:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}

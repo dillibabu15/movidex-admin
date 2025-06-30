@@ -5,6 +5,7 @@ import AdminDashboard from "./components/AdminDashboard";
 import AddMovie from "./components/AddMovie";
 import EditMovie from "./components/EditMovie";
 import LoginPage from "./components/LoginPage"; // Replace with your actual login component
+import UserManagement from "./components/UserManagement";
 // import NotFound from "./components/NotFound"; // Optional
 
 export default function App() {
@@ -32,6 +33,14 @@ export default function App() {
         element={
           <AdminRoute>
             <EditMovie />
+          </AdminRoute>
+        }
+      />
+      <Route
+        path="/admin/users"
+        element={
+          <AdminRoute>
+            <UserManagement />
           </AdminRoute>
         }
       />

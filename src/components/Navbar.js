@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import "./styles.css"; // Import the CSS file
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -10,36 +12,49 @@ export default function Navbar() {
   };
 
   return (
-    <nav style={{
-      background: "#222",
-      color: "#fff",
-      padding: "12px 32px",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between"
-    }}>
-      <div>
-        <Link to="/admin/dashboard" style={{ color: "#fff", textDecoration: "none", marginRight: 24, fontWeight: 600 }}>
-          Dashboard
-        </Link>
-        <Link to="/admin/add" style={{ color: "#fff", textDecoration: "none", fontWeight: 600 }}>
-          Add Movie
-        </Link>
+    <nav className="navbar">
+      <div className="navbar-brand">Admin Panel</div>
+      
+      {/* Hamburger Icon */}
+      <div className="hamburger" onClick={() => setOpen(!open)}>
+        <div className="hamburger-line" />
+        <div className="hamburger-line" />
+        <div className="hamburger-line" />
       </div>
-      <button
-        onClick={handleLogout}
-        style={{
-          background: "#e74c3c",
-          color: "#fff",
-          border: "none",
-          borderRadius: 4,
-          padding: "6px 18px",
-          cursor: "pointer",
-          fontWeight: 600
-        }}
-      >
-        Logout
-      </button>
+
+      {/* Mobile Menu */}
+      {open && (
+        <div className="mobile-nav">
+          <Link 
+            to="/admin/dashboard" 
+            className="nav-link" 
+            onClick={() => setOpen(false)}
+          >
+            Dashboard
+          </Link>
+          <Link 
+            to="/admin/add" 
+            className="nav-link" 
+            onClick={() => setOpen(false)}
+          >
+            Add Movie
+          </Link>
+          <Link 
+            to="/admin/users" 
+            className="nav-link" 
+            onClick={() => setOpen(false)}
+          >
+            User Management
+          </Link>
+          <div className="nav-divider" />
+          <button
+            onClick={() => { setOpen(false); handleLogout(); }}
+            className="nav-logout"
+          >
+            Logout
+          </button>
+        </div>
+      )}
     </nav>
   );
 }
